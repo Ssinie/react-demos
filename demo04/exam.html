@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // 컴포넌트(component) 정의
+      // 첫글자는 대문자로 정의해야함.(소문자일 경우 React 에서 오류 발생)
+      // 컴포넌트에는 최상위 자식노드 하나만 있어야함
+      // ** Our code goes here! **
+
+      // 컴포넌트 정의 호출하면 render 의 return을 전달
+      // 컴포넌트 첫글자 대문자 주의
+      class HelloMessage extends React.Component {
+        render() {
+          return <h1>Hello {this.props.name}</h1>;
+        }
+      }
+
+      // 컴포넌트 호출하여 example 에 연결
+      // HelloMessage 에서 name을 this.props.name 에서 사용
+      ReactDOM.render(
+        <HelloMessage name="John" />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

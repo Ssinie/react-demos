@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // JSX = JavaScriptXml
+      // 자바스크립트에서 HTML을 작성하듯이 하기에 작성에 용이
+
+      // JSX 문법
+
+      // 1. 반드시 부모 요소 하나가 감싸는 형태여야 한다.
+      
+      function App() {
+        // 잘못된 예
+        /*
+        return(
+          <div>Hello</div>,
+          <div>GoodLucky!</div>
+        );
+        */
+        return(
+          <div>
+            <div>Hello</div>
+            <div>GoodLucky!</div>
+          </div>
+        );
+      }
+      
+      App();
+    </script>
+    
+    <h1></h1>
+  </body>
+</html>

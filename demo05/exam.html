@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="examples"></div>
+    <script type="text/babel">
+      // this.props.children
+      // 구성요소의 자식 노드에 액세스 하는데에 사용
+      // ReactDOM 에서 Direct 로 접근한 것이 아니기에 child로 접근...
+      class NoteList extends React.Component {
+        render() {
+          return (
+            <ol>
+              {
+                React.Children.map(this.props.children, function(child) {
+                  return <li>{child}</li>;
+                })
+              }
+            </ol>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <NoteList>
+          <span>hello</span>
+          <span>world</span>
+        </NoteList>,
+        document.getElementById('example')
+      );
+
+      ReactDOM.render(
+        <div>
+          <span>hello</span>
+          <span>world</span>
+        </div>,
+        document.getElementById('examples')
+      );
+    </script>
+  </body>
+</html>
